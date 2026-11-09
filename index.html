@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会</title>
+<meta name="description" content="VibeCoding 技术成长分享交流会：从工具选择、技术栈、GitHub Pages 部署到 AI 接管迭代，用一条完整链路把想法变成上线可访问的网站。" />
+<meta name="theme-color" content="#0b0b0d" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会" />
+<meta property="og:description" content="四个环节、两条部署路径：从一句自然语言，到一个真正上线的网站。" />
+<meta property="og:image" content="assets/shots/github-home.webp" />
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<a class="skip" href="#main" style="position:absolute;left:-9999px;top:0;background:#fff;padding:10px 16px;z-index:300">跳到主要内容</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#top" aria-label="返回顶部">
+      <span class="brand__mark">VC</span>
+      <span>VibeCoding</span>
+      <span class="brand__sub">技术成长分享会</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="章节导航">
+      <a class="nav__link" href="#anxiety">焦虑清单</a>
+      <a class="nav__link" href="#what">是什么</a>
+      <a class="nav__link" href="#tools">工具链</a>
+      <a class="nav__link" href="#stack">技术栈</a>
+      <a class="nav__link" href="#manual">部署</a>
+      <a class="nav__link" href="#agent">AI 接管</a>
+      <a class="nav__link" href="#loop">闭环</a>
+      <a class="nav__link" href="#pitfalls">避坑</a>
+    </nav>
+
+    <div class="nav__right">
+      <a class="nav__gh" href="https://github.com/17762396674-star/vibecoding-share" target="_blank" rel="noopener">
+        <img src="assets/logos/github.svg" alt="" width="15" height="15" />
+        <span>GitHub</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="打开目录" aria-expanded="false" aria-controls="navLinks">
+        <span class="ic" style="--ic:url('../icons/menu.svg')"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== SIDE RAIL ===================== -->
+<aside class="rail" aria-label="页面进度">
+  <a href="#anxiety" data-rail="anxiety"><span>01 焦虑清单</span></a>
+  <a href="#what" data-rail="what"><span>02 什么是 VibeCoding</span></a>
+  <a href="#tools" data-rail="tools"><span>03 工具链</span></a>
+  <a href="#stack" data-rail="stack"><span>04 技术栈</span></a>
+  <a href="#manual" data-rail="manual"><span>05 部署 · 路径一</span></a>
+  <a href="#agent" data-rail="agent"><span>06 部署 · 路径二</span></a>
+  <a href="#compare" data-rail="compare"><span>07 路径对比</span></a>
+  <a href="#loop" data-rail="loop"><span>08 闭环流程</span></a>
+  <a href="#pitfalls" data-rail="pitfalls"><span>09 常见坑</span></a>
+  <a href="#start" data-rail="start"><span>10 今天开始</span></a>
+</aside>
+
+<main id="main">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="hero__grid" aria-hidden="true"></div>
+  <div class="wrap hero__inner">
+    <span class="hero__badge reveal"><span class="dot"></span>2026 · 技术成长分享交流会 · 现场版</span>
+
+    <h1 class="reveal" style="--d:1">
+      <span class="line">拥抱 <span class="ai">AI</span>，</span>
+      <span class="line">拒绝<span class="strike">焦虑</span></span>
+    </h1>
+
+    <p class="hero__lead reveal" style="--d:2">
+      从一句自然语言，到一个真正上线的网站。<br />
+      四个环节、两条部署路径，把「我不会写代码」变成「我已经上线了」。
+    </p>
+
+    <div class="hero__meta reveal" style="--d:3">
+      <span class="chip"><b>4</b> 个环节</span>
+      <span class="chip"><b>2</b> 条部署路径</span>
+      <span class="chip"><b>0</b> 行代码起步</span>
+      <span class="chip">GitHub Pages</span>
+    </div>
+
+    <div class="hero__cta reveal" style="--d:4">
+      <a class="btn btn--primary" href="#anxiety">开始浏览 <span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></a>
+      <a class="btn btn--night-ghost" href="#manual">直接看部署 <span class="ic ic--sm" style="--ic:url('../icons/rocket.svg')"></span></a>
+    </div>
+
+    <!-- demo: prompt -> page -->
+    <div class="demo reveal" id="demo" style="--d:5">
+      <div class="demo__bar">
+        <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>WorkBuddy Agent · main</span>
+        <span class="live">已连接仓库</span>
+      </div>
+      <div class="demo__body">
+        <div class="demo__left">
+          <div class="demo__prompt">
+            <span class="pmt">&gt;</span>
+            <span><span id="typed"></span><span class="caret" id="caret"></span></span>
+          </div>
+          <ul class="demo__log" id="demoLog">
+            <li>读取 index.html 与样式文件</li>
+            <li>修改首屏标题与主色</li>
+            <li>git add · commit · push 到 main</li>
+            <li>GitHub Pages 重新部署完成</li>
+          </ul>
+          <div class="demo__url">
+            <span class="ic" style="--ic:url('../icons/lock.svg')"></span>
+            https://你的用户名.github.io/vibecoding/
+          </div>
+        </div>
+        <div class="demo__right">
+          <div class="mini" id="mini">
+            <div class="mini__nav">
+              <span class="m-dot"></span><span class="m-dot"></span><span class="m-dot"></span>
+              <span class="m-brand">preview</span>
+            </div>
+            <div class="mini__eyebrow">2026 · 分享会</div>
+            <h4 id="miniTitle">未命名页面</h4>
+            <p id="miniDesc">这是一段占位文案，等待一句自然语言把它变成真正的首页。</p>
+            <div class="mini__btns" aria-hidden="true"><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__foot">
+      <a class="hero__scroll" href="#anxiety">向下浏览<span></span></a>
+      <span class="hero__hint">← / → 切换章节</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 01 焦虑清单 ===================== -->
+<section class="section" id="anxiety">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">01 / 焦虑清单</span>
+        <span class="sec-index__label">Why we freeze</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">真正劝退人的，<br />从来不是代码。</h2>
+        <p class="lead reveal" style="--d:1">
+          一个静态网站从想法到线上可访问，只需要走完四步：选定 AI 工具、确定技术栈、部署到 GitHub Pages、再选择手动更新或让 AI 接管。
+          但在第一步之前，大多数人先被这四件事拦住了。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">把「我不会」拆开看，<br />每一项都能被替换成具体动作。</div>
+    </div>
+
+    <div class="grid grid--2">
+      <article class="card reveal">
+        <span class="card__tag">01</span>
+        <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/blocks.svg')"></span></div>
+        <h3>工具太多，选不出来</h3>
+        <p>豆包、Trea、Cursor、Copilot……每个都说自己最好。于是先花一周时间「选工具」，一行页面也没写。</p>
+        <div class="card__meta"><b>本质</b><span>缺一张流程图：谁负责构思、谁负责编码、谁负责迭代。</span></div>
+      </article>
+
+      <article class="card reveal" style="--d:1">
+        <span class="card__tag">02</span>
+        <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/layers.svg')"></span></div>
+        <h3>名词太多，看不懂</h3>
+        <p>Tailwind、Astro、DaisyUI、Primer CSS……文档是英文的，教程是三年期的，还没开始就被术语劝退。</p>
+        <div class="card__meta"><b>本质</b><span>缺一个最小可行组合：够用、能查、AI 认识。</span></div>
+      </article>
+
+      <article class="card reveal" style="--d:2">
+        <span class="card__tag">03</span>
+        <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/globe.svg')"></span></div>
+        <h3>上线像黑盒</h3>
+        <p>本地打开一切正常，部署完却是一片空白：图片 404、样式丢失，不知道问题出在哪一层。</p>
+        <div class="card__meta"><b>本质</b><span>缺一次完整跑通的经验，而不是更多教程。</span></div>
+      </article>
+
+      <article class="card reveal" style="--d:3">
+        <span class="card__tag">04</span>
+        <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/refresh-cw.svg')"></span></div>
+        <h3>改一版，重传一次</h3>
+        <p>只想微调一行字，也要重新拖文件、提交、等部署。改到第三次，热情基本耗尽。</p>
+        <div class="card__meta"><b>本质</b><span>缺一条自动化链路：改完就推送，推送即上线。</span></div>
+      </article>
+    </div>
+
+    <div class="statement reveal">
+      <p>这四件事，<br />没有一件是<em>编程能力</em>问题。</p>
+      <div class="stamp">
+        它们分别对应：流程 / 选型 / 路径 / 机制<br />
+        —— 也正好是下面四个章节
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 02 什么是 VibeCoding ===================== -->
+<section class="section" id="what">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">02 / 定义</span>
+        <span class="sec-index__label">What it is</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">自然语言驱动建站</h2>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:1">不是「让 AI 替你写代码」，<br />是「你负责判断，AI 负责施工」。</div>
+    </div>
+
+    <div class="quote reveal">
+      <div class="quote__mark" aria-hidden="true">“</div>
+      <div>
+        <blockquote>
+          VibeCoding 就是<mark>自然语言驱动建站</mark>——选好工具链，从构思、写代码、反复调优到一键上线，持续维护自己的静态网站。
+        </blockquote>
+        <div class="quote__by">
+          <span class="ic ic--sm" style="--ic:url('../icons/book-open.svg')"></span>
+          《VibeCoding 建站实操指南》· 一句话总结
+        </div>
+      </div>
+    </div>
+
+    <div class="flowchips reveal" style="--d:1">
+      <span class="chip"><span class="n">01</span> 说清想要什么</span>
+      <span class="arrow"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="chip"><span class="n">02</span> AI 改代码</span>
+      <span class="arrow"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="chip"><span class="n">03</span> 推送即上线</span>
+      <span class="arrow"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="chip"><span class="n">04</span> 不满意继续说</span>
+    </div>
+
+    <div class="ba reveal" style="--d:2">
+      <div class="ba__col ba__col--past">
+        <div class="ba__title">过去 <span class="badge">前置成本高</span></div>
+        <ol>
+          <li><span class="idx">01</span>学 HTML / CSS / JS 语法</li>
+          <li><span class="idx">02</span>配本地环境与包管理器</li>
+          <li><span class="idx">03</span>读懂框架文档与构建配置</li>
+          <li><span class="idx">04</span>手动上传文件部署</li>
+          <li><span class="idx">05</span>每次改动重复一遍流程</li>
+        </ol>
+      </div>
+      <div class="ba__col ba__col--now">
+        <div class="ba__title">现在 <span class="badge">反馈以分钟计</span></div>
+        <ol>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/message-square.svg')"></span>用中文描述页面目标与风格</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/sparkles.svg')"></span>AI 生成可运行的原型</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/mouse-pointer-click.svg')"></span>看到效果，指出具体要改哪里</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/git-branch.svg')"></span>AI 提交并推送，Pages 自动重建</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/circle-check.svg')"></span>刷新线上链接，继续下一轮</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 03 工具链 ===================== -->
+<section class="section" id="tools">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">03 / 工具链</span>
+        <span class="sec-index__label">The relay</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">三个工具，<br />在流程里接力。</h2>
+        <p class="lead reveal" style="--d:1">
+          它们不是二选一，而是在不同位置各有一个更顺手的：构思、编码、迭代各占一段。
+          把「最贵的动作」交给最合适的工具，是省时间也省额度的关键。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">选工具的标准不是最强，<br />而是「此刻最顺手」。</div>
+    </div>
+
+    <div class="grid grid--3">
+      <article class="tool reveal">
+        <div class="tool__top">
+          <span class="logo-tile logo-tile--lg"><img src="assets/logos/doubao.png" alt="豆包" width="32" height="32" /></span>
+          <div>
+            <div class="tool__name">豆包</div>
+            <div class="tool__role">构思 · IDEATION</div>
+          </div>
+          <span class="tool__stage">STEP 1</span>
+        </div>
+        <p>前期构思：梳理站点思路、写文案、搭项目整体框架。适合把模糊想法整理成结构，快速产出原型方案与文案初稿。</p>
+        <ul class="tool__list">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>把「我想做个分享网站」拆成页面结构</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>一次生成多版文案，挑一版再改</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>产出可交给编码工具的需求描述</li>
+        </ul>
+      </article>
+
+      <article class="tool reveal" style="--d:1">
+        <div class="tool__top">
+          <span class="logo-tile logo-tile--lg"><img src="assets/logos/trae.png" alt="Trea" width="32" height="32" /></span>
+          <div>
+            <div class="tool__name">Trea</div>
+            <div class="tool__role">编码 · BUILD</div>
+          </div>
+          <span class="tool__stage">STEP 2</span>
+        </div>
+        <p>编码阶段：写页面代码、调试静态网页。独立的 AI 原生 IDE，代码补全与多文件重构能力完善。</p>
+        <ul class="tool__list">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>按选定框架与组件库生成页面骨架</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>跨文件改动：结构、样式、脚本一起调</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>先在本地看到能跑的原型</li>
+        </ul>
+      </article>
+
+      <article class="tool tool--highlight reveal" style="--d:2">
+        <div class="tool__top">
+          <span class="logo-tile logo-tile--lg"><img src="assets/logos/workbuddy.svg" alt="WorkBuddy" width="32" height="32" /></span>
+          <div>
+            <div class="tool__name">WorkBuddy</div>
+            <div class="tool__role">迭代 · ITERATE</div>
+          </div>
+          <span class="tool__stage">STEP 3</span>
+        </div>
+        <p>高频迭代：多轮修改页面细节、反复调样式与功能。同样支持开发与项目迭代，<b>积分消耗更少</b>，长期反复调试更省积分。</p>
+        <ul class="tool__list">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>口述「标题改一下、按钮换蓝色」</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>改完直接推送，触发 Pages 重建</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>多轮打磨的成本，从这里降下来</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="relay reveal">
+      <span class="relay__node"><span class="n">A</span>模糊想法</span>
+      <span class="sep"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="relay__node"><span class="n">B</span>结构与文案</span>
+      <span class="sep"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="relay__node"><span class="n">C</span>可运行原型</span>
+      <span class="sep"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="relay__node"><span class="n">D</span>多轮打磨</span>
+      <span class="sep"><span class="ic ic--sm" style="--ic:url('../icons/arrow-right.svg')"></span></span>
+      <span class="relay__node"><span class="n">E</span>上线链接</span>
+      <span class="tail">一次配置，循环使用</span>
+    </div>
+
+    <div class="netbar reveal">
+      <span class="logo-tile"><img src="assets/logos/watt2.png" alt="Watt Toolkit" width="23" height="23" /></span>
+      <div>
+        <div class="netbar__title">Watt Toolkit（瓦特工具箱，原名 Steam++）</div>
+        <div class="netbar__desc">优化访问 GitHub 的网络连通性，缓解网页加载慢、仓库 clone 超时、图片资源加载卡顿这一类问题。</div>
+      </div>
+      <span class="netbar__note">仅用于正常访问开源项目 · 合规使用</span>
+    </div>
+
+    <div class="strip reveal">
+      <figure data-zoom="assets/shots/doubao.webp" data-cap="豆包 · 把模糊想法整理成结构与文案">
+        <img src="assets/shots/doubao.webp" alt="豆包界面截图：对话框与创作能力入口" loading="lazy" />
+        <figcaption><span>豆包 · 构思</span><span>截图</span></figcaption>
+      </figure>
+      <figure data-zoom="assets/shots/trae.webp" data-cap="TRAE · AI 原生 IDE 官网">
+        <img src="assets/shots/trae.webp" alt="TRAE 官网截图：深色首页与产品能力介绍" loading="lazy" />
+        <figcaption><span>Trea · 编码</span><span>截图</span></figcaption>
+      </figure>
+      <figure data-zoom="assets/shots/workbuddy.webp" data-cap="WorkBuddy · 说出要求，交付完整成果">
+        <img src="assets/shots/workbuddy.webp" alt="WorkBuddy 官网截图：产品首页与应用界面" loading="lazy" />
+        <figcaption><span>WorkBuddy · 迭代</span><span>截图</span></figcaption>
+      </figure>
+      <figure data-zoom="assets/shots/watt.webp" data-cap="Watt Toolkit · 网络连通性工具">
+        <img src="assets/shots/watt.webp" alt="Watt Toolkit 官网截图：加速工具介绍" loading="lazy" />
+        <figcaption><span>Watt Toolkit · 网络</span><span>截图</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 04 技术栈 ===================== -->
+<section class="section" id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">04 / 技术栈</span>
+        <span class="sec-index__label">Pick a stack</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">能 CDN 引入，<br />就别搭构建。</h2>
+        <p class="lead reveal" style="--d:1">
+          静态站点部署到 GitHub Pages 时，优先选能通过 CDN 直接引入、不需要本地打包构建的方案，省掉一整套环境配置。
+          下面这些都是「复制一行链接就能用」的选项。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">判断标准只有三条：<br />能查、能改、AI 认识。</div>
+    </div>
+
+    <div class="tabs reveal" role="tablist" aria-label="技术栈分类">
+      <button class="tab" role="tab" id="tab-css" aria-controls="panel-css" aria-selected="true">
+        CSS 框架 <span class="count">4</span>
+      </button>
+      <button class="tab" role="tab" id="tab-gen" aria-controls="panel-gen" aria-selected="false" tabindex="-1">
+        站点生成器 <span class="count">1</span>
+      </button>
+      <button class="tab" role="tab" id="tab-ui" aria-controls="panel-ui" aria-selected="false" tabindex="-1">
+        UI 组件库 <span class="count">5</span>
+      </button>
+    </div>
+
+    <div class="tabpanel" id="panel-css" role="tabpanel" aria-labelledby="tab-css">
+      <div class="stack-grid">
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/tailwindcss.svg" alt="Tailwind CSS" /></span>
+          <div>
+            <div class="stack__name">Tailwind CSS</div>
+            <div class="stack__desc">自由度最高，样式全部靠类名组合；落地页与个人站首选，可与组件库叠加。</div>
+            <span class="stack__flag">推荐</span>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/bootstrap.svg" alt="Bootstrap" /></span>
+          <div>
+            <div class="stack__name">Bootstrap 5</div>
+            <div class="stack__desc">老牌成熟，栅格与现成组件齐全、文档多，新手友好；默认样式辨识度高。</div>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/picocss.svg" alt="Pico CSS" /></span>
+          <div>
+            <div class="stack__name">Pico CSS</div>
+            <div class="stack__desc">无 class 框架，写原生 HTML 标签就自带版式，极轻量，适合快速出展示页。</div>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><span style="font-weight:700;font-size:15px;letter-spacing:-.03em;color:#7c766a">Mg</span></span>
+          <div>
+            <div class="stack__name">Milligram</div>
+            <div class="stack__desc">体积很小、风格简洁，适合个人作品集与简单落地页。</div>
+          </div>
+        </div>
+      </div>
+      <div class="code-inline reveal">
+        <span class="cm">&lt;!-- 极简方案：一行 CDN 就够 --&gt;</span>
+        <span class="tag">&lt;link</span> rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico"<span class="tag">&gt;</span>
+      </div>
+    </div>
+
+    <div class="tabpanel" id="panel-gen" role="tabpanel" aria-labelledby="tab-gen" hidden>
+      <div class="stack-grid">
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/astro.svg" alt="Astro" /></span>
+          <div>
+            <div class="stack__name">Astro</div>
+            <div class="stack__desc">输出极少 JS、访问速度快，适合博客与项目主页这类需要更正式、更高性能的站点。</div>
+            <span class="stack__flag">需要构建</span>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/github.svg" alt="GitHub Pages" /></span>
+          <div>
+            <div class="stack__name">纯静态 HTML</div>
+            <div class="stack__desc">没有构建步骤，改完直接上传即可。第一次上线，这条路最稳。</div>
+            <span class="stack__flag">零配置</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpanel" id="panel-ui" role="tabpanel" aria-labelledby="tab-ui" hidden>
+      <div class="stack-grid">
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/daisyui.svg" alt="DaisyUI" /></span>
+          <div>
+            <div class="stack__name">DaisyUI</div>
+            <div class="stack__desc">基于 Tailwind，按钮、卡片、弹窗、导航栏、暗黑模式开箱可用，出原型最快。</div>
+            <span class="stack__flag">推荐</span>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/shadcnui.svg" alt="shadcn/ui" /></span>
+          <div>
+            <div class="stack__name">shadcn/ui</div>
+            <div class="stack__desc">组件质感偏高级，可定制性强，适合想做精致页面的场景。</div>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/flowbite.svg" alt="Flowbite" /></span>
+          <div>
+            <div class="stack__name">Flowbite</div>
+            <div class="stack__desc">基于 Tailwind，表单、选项卡、折叠面板等交互组件齐全，文档清楚。</div>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><img src="assets/logos/uikit.svg" alt="UIkit" /></span>
+          <div>
+            <div class="stack__name">UIkit</div>
+            <div class="stack__desc">组件丰富，自带轮播、灯箱，适合内容型与图文展示站点。</div>
+          </div>
+        </div>
+        <div class="stack">
+          <span class="logo-tile"><span style="font-weight:700;font-size:16px;color:#783ae4;letter-spacing:-.04em">P</span></span>
+          <div>
+            <div class="stack__name">Primer CSS</div>
+            <div class="stack__desc">GitHub 自家样式体系，干净简约，适合工具类站点与文档页。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reco reveal">
+      <div>
+        <div class="reco__logos">
+          <span class="logo-tile"><img src="assets/logos/tailwindcss.svg" alt="Tailwind CSS" /></span>
+          <span class="plus">+</span>
+          <span class="logo-tile"><img src="assets/logos/daisyui.svg" alt="DaisyUI" /></span>
+        </div>
+        <h3>推荐组合：<br />Tailwind CSS + DaisyUI</h3>
+        <p>网上示例多、AI 生成代码时识别度高、改样式灵活，和「口述需求让 AI 改页面」的方式契合。</p>
+      </div>
+      <ul class="reco__list">
+        <li><span class="ic" style="--ic:url('../icons/search.svg')"></span><div><b>示例多，遇到问题搜得到</b><span>常见版式都有现成答案</span></div></li>
+        <li><span class="ic" style="--ic:url('../icons/sparkles.svg')"></span><div><b>AI 识别度高，生成更准</b><span>类名体系稳定，返工更少</span></div></li>
+        <li><span class="ic" style="--ic:url('../icons/wand-2.svg')"></span><div><b>改样式不用重写结构</b><span>换一组类名就能换风格</span></div></li>
+        <li><span class="ic" style="--ic:url('../icons/gauge.svg')"></span><div><b>只想极简：用 Pico CSS</b><span>一行 CDN，先跑通再说</span></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 05 路径一 ===================== -->
+<section class="section" id="manual">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">05 / 路径一</span>
+        <span class="sec-index__label">Manual deploy</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">手动部署：<br />只在网页上点三下。</h2>
+        <p class="lead reveal" style="--d:1">
+          这条路径不装任何软件、不配密钥，全部在 GitHub 网页上完成，适合第一次上线。
+          下面三步的界面截图都来自 GitHub 官方文档，照着点即可。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">目标不是「学会部署」，<br />而是今天拿到一个能打开的链接。</div>
+    </div>
+
+    <div class="step">
+      <div class="step__body reveal">
+        <div class="step__num"><b>1</b>NEW REPOSITORY</div>
+        <h3>新建一个仓库</h3>
+        <p>登录 github.com，点右上角「+」新建 repository 并命名。两步设置决定成败：公开性必须设为 <b>Public</b>，否则 Pages 托管受限；不要勾选初始化 README，否则上传时会多一次冲突。</p>
+        <ul class="step__notes">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>仓库名会成为访问地址的一部分，用英文小写与连字符</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>Visibility 选 <code>Public</code>，这是 Pages 免费托管的前提</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>初始化选项全部留空，保持空仓库</li>
+        </ul>
+      </div>
+      <div class="step__shot reveal" style="--d:1">
+        <div class="frame">
+          <div class="frame__bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="frame__url"><span class="ic" style="--ic:url('../icons/lock.svg')"></span>github.com/new</span>
+          </div>
+          <button class="ui-shot" data-zoom="assets/shots/ui/repo-name.webp" data-cap="GitHub 新建仓库：Repository name 与 Public 选项（来源：GitHub Docs）" aria-label="放大查看新建仓库界面">
+            <img src="assets/shots/ui/repo-name.webp" alt="GitHub 新建仓库界面：仓库名输入框，括号提示会生成 Pages 站点" loading="lazy" />
+          </button>
+        </div>
+        <div class="step__caption"><span class="ic ic--sm" style="--ic:url('../icons/image.svg')"></span>仓库名下方会直接提示 Pages 地址 · 点击可放大</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__body reveal">
+        <div class="step__num"><b>2</b>UPLOAD FILES</div>
+        <h3>上传网站文件</h3>
+        <p>进入仓库点「uploading an existing file」，把本地全部文件拖入后提交。这一步有两个硬性要求：根目录必须存在 <code>index.html</code>；图片、CSS、JS 全部用相对路径（如 <code>./img/a.png</code>），写本地绝对路径上线后必然 404。</p>
+        <ul class="step__notes">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>保持目录结构一起上传，别只传单个 HTML</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>所有引用统一写相对路径：<code>./assets/...</code></li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>提交后确认文件列表里能看到 <code>index.html</code></li>
+        </ul>
+      </div>
+      <div class="step__shot reveal" style="--d:1">
+        <div class="frame">
+          <div class="frame__bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="frame__url"><span class="ic" style="--ic:url('../icons/lock.svg')"></span>github.com/用户名/仓库名</span>
+          </div>
+          <button class="ui-shot" data-zoom="assets/shots/ui/add-file.webp" data-cap="Add file → Upload files：把本地文件直接拖进浏览器提交（来源：GitHub Docs）" aria-label="放大查看上传文件入口">
+            <img src="assets/shots/ui/add-file.webp" alt="GitHub 仓库文件列表上方的 Add file 下拉菜单，Upload files 选项被高亮" loading="lazy" />
+          </button>
+        </div>
+        <div class="step__caption"><span class="ic ic--sm" style="--ic:url('../icons/upload.svg')"></span>官方文档原图 · Add file → Upload files，根目录要有 index.html</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step__body reveal">
+        <div class="step__num"><b>3</b>ENABLE PAGES</div>
+        <h3>开启 Pages</h3>
+        <p>Settings → 左侧 Pages → Source 选 <b>Deploy from a branch</b> → 分支选 <b>main</b>、目录选 <b>/root</b> → Save。等待 1 到 3 分钟，页面会给出 <code>https://用户名.github.io/仓库名/</code> 的访问地址。</p>
+        <ul class="step__notes">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>分支选错是「一直 404」的最常见原因</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>首次构建需要等，刷新前先看 Actions 状态</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>后续更新：本地改完覆盖上传、提交，Pages 自动重建</li>
+        </ul>
+      </div>
+      <div class="step__shot reveal" style="--d:1">
+        <div class="frame">
+          <div class="frame__bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="frame__url"><span class="ic" style="--ic:url('../icons/lock.svg')"></span>github.com/用户名/仓库名/settings/pages</span>
+          </div>
+          <button class="ui-shot" data-zoom="assets/shots/ui/branch-select.webp" data-cap="Pages 设置：Branch 选 main，目录选 /root，然后 Save（来源：GitHub Docs）" aria-label="放大查看 Pages 分支设置">
+            <img src="assets/shots/ui/branch-select.webp" alt="GitHub Pages 设置界面：Branch 下拉框与 Save 按钮" loading="lazy" />
+          </button>
+        </div>
+        <div class="step__caption"><span class="ic ic--sm" style="--ic:url('../icons/image.svg')"></span>官方文档原图 · Branch 与目录是两个下拉框</div>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <span class="ic" style="--ic:url('../icons/triangle-alert.svg')"></span>
+      <div>
+        <div class="callout__title">页面空白 / 图片不显示？先查这三处</div>
+        <p>① 仓库是否 Public；② 根目录是否有 <code>index.html</code>；③ 资源路径是否写成了本地绝对路径（如 <code>D:\网站\img\a.png</code>）。这三条能覆盖绝大多数「上线就白屏」。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 06 路径二 ===================== -->
+<section class="section" id="agent">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">06 / 路径二</span>
+        <span class="sec-index__label">AI takes over</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">配一次密钥，<br />之后只说需求。</h2>
+        <p class="lead reveal" style="--d:1">
+          原理是一次性把仓库读写凭证交给 AI 工具，之后由 AI 改代码并自动推送；main 分支一变，GitHub Pages 自动重新部署，网站跟着刷新。
+          核心就是那串密钥 —— PAT（Personal Access Token，个人访问令牌）。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">只配置一次，<br />之后每次改动都变成一句话。</div>
+    </div>
+
+    <div class="chain reveal">
+      <div class="chain__node">
+        <div class="k">STEP 01</div>
+        <div class="t">你提需求</div>
+        <div class="d">自然语言描述要改的地方</div>
+      </div>
+      <div class="chain__node">
+        <div class="k">STEP 02</div>
+        <div class="t">AI 改代码</div>
+        <div class="d">读取文件、定位修改点</div>
+      </div>
+      <div class="chain__node chain__node--accent">
+        <div class="k">STEP 03</div>
+        <div class="t">自动推送</div>
+        <div class="d">add · commit · push 到 main</div>
+      </div>
+      <div class="chain__node">
+        <div class="k">STEP 04</div>
+        <div class="t">Pages 重建</div>
+        <div class="d">分支变动即触发部署</div>
+      </div>
+      <div class="chain__node">
+        <div class="k">STEP 05</div>
+        <div class="t">线上刷新</div>
+        <div class="d">打开链接看到新版本</div>
+      </div>
+    </div>
+
+    <div class="grid grid--2" style="align-items:start">
+      <div class="reveal">
+        <h3 style="font-size:1.1rem;margin-bottom:14px">1 · 生成 Fine-grained PAT</h3>
+        <ul class="step__notes" style="gap:11px">
+          <li><span class="num">1</span>GitHub 右上角头像 → Settings → 拉到最底部 Developer settings</li>
+          <li><span class="num">2</span>Personal access tokens → <b>Fine-grained tokens</b> → Generate new token（优先细粒度，不要用经典令牌）</li>
+          <li><span class="num">3</span>名称填「VibeCoding AI 网站自动推送」，按需设置过期时间（如 90 天）</li>
+          <li><span class="num">4</span>Repository access 只勾选这一个网站仓库，权限最小</li>
+          <li><span class="num">5</span>Repository permissions 里把 <b>Contents</b> 设为 <b>Read and write</b></li>
+          <li><span class="num">6</span>生成后<b>立刻复制保存</b>：完整密钥只显示这一次，关掉页面就再也看不到</li>
+        </ul>
+
+        <div class="perm">
+          <div class="perm__row"><span>配置项</span><span>建议值</span></div>
+          <div class="perm__row"><span>Token 类型</span><span>Fine-grained</span></div>
+          <div class="perm__row"><span>Repository access</span><span>Only select repositories</span></div>
+          <div class="perm__row"><span>Contents</span><span class="ok">Read and write</span></div>
+          <div class="perm__row"><span>Expiration</span><span>90 days</span></div>
+        </div>
+      </div>
+
+      <div class="step__shot reveal" style="--d:1">
+        <div class="frame">
+          <div class="frame__bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="frame__url"><span class="ic" style="--ic:url('../icons/lock.svg')"></span>docs.github.com/…/managing-your-personal-access-tokens</span>
+          </div>
+          <img src="assets/shots/docs-pat.webp" alt="GitHub 官方文档：管理个人访问令牌页面" style="width:100%" loading="lazy" />
+        </div>
+        <div class="frame" style="margin-top:12px">
+          <div class="frame__bar">
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="frame__url"><span class="ic" style="--ic:url('../icons/key-round.svg')"></span>tokens · 生成后仅显示一次</span>
+          </div>
+          <button class="ui-shot" data-zoom="assets/shots/ui/token-copy.webp" data-cap="令牌生成后只显示一次，务必立即复制（来源：GitHub Docs）" aria-label="放大查看令牌复制提示">
+            <img src="assets/shots/ui/token-copy.webp" alt="GitHub 令牌页面：提示立即复制，太长了不可再见" loading="lazy" />
+          </button>
+        </div>
+        <div class="step__caption"><span class="ic ic--sm" style="--ic:url('../icons/image.svg')"></span>官方文档截图 · 细粒度令牌的权限设置</div>
+      </div>
+    </div>
+
+    <div class="grid grid--2" style="margin-top:34px;align-items:start">
+      <div class="reveal">
+        <h3 style="font-size:1.1rem;margin-bottom:14px">2 · 本地环境与授权</h3>
+        <ul class="step__notes" style="gap:11px">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>安装 Cursor 编辑器与 Git</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>把仓库 clone 到本地，或直接在 Cursor 里打开网站文件夹</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>在 Cursor 里登录 GitHub 账号并配置凭证。走 OAuth 授权可以不用手动填 PAT；脱离 Cursor、由外部 agent 访问仓库时，才必须用 PAT</li>
+        </ul>
+      </div>
+      <div class="reveal" style="--d:1">
+        <h3 style="font-size:1.1rem;margin-bottom:14px">3 · 下达接管指令</h3>
+        <p style="font-size:.88rem;color:var(--ink-2);line-height:1.75">在编辑器里把下面这段原样发给 AI，作为该站点的固定维护规则。之后每次要改页面，只需要补一句新的需求。</p>
+      </div>
+    </div>
+
+    <div class="codeblock reveal" style="margin-top:20px">
+      <div class="codeblock__bar">
+        <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>维护 Agent · 系统提示词</span>
+        <button class="copy" id="copyBtn" data-target="promptCode">
+          <span class="ic ic--sm" style="--ic:url('../icons/copy.svg')"></span><span id="copyText">复制</span>
+        </button>
+      </div>
+      <pre><code id="promptCode">你是本 GitHub Pages 静态站点的维护 Agent。
+仓库已经关联远程 github 地址，pages 托管已经配置完成。
+当我提出修改需求，你直接修改对应 html/css/js 代码；修改完成之后自动执行 git add、git commit、git push 推送到 main 分支。
+推送成功后 GitHub Pages 会自动重新部署网站。
+每次改动完成告诉我修改点，并且输出网站访问链接。
+不要擅自大幅度改动原有页面布局，遵循当前页面风格。</code></pre>
+    </div>
+
+    <div class="grid grid--2" style="margin-top:24px;align-items:start">
+      <div class="reveal">
+        <h3 style="font-size:1.1rem;margin-bottom:12px">4 · 日常使用</h3>
+        <p style="font-size:.88rem;color:var(--ink-2);line-height:1.78">
+          之后只需要打字描述想要的效果。AI 会依次完成：读取并修改对应文件、暂存改动、生成提交注释并推送、触发 Pages 重新部署，最后把线上链接给你。
+        </p>
+        <div class="flowchips" style="margin-top:16px">
+          <span class="chip chip--light">把网页标题改成 VibeCoding 分享会</span>
+          <span class="chip chip--light">首页增加一张图片</span>
+          <span class="chip chip--light">按钮颜色换成蓝色</span>
+        </div>
+      </div>
+      <div class="callout reveal" style="margin-top:0;--d:1">
+        <span class="ic" style="--ic:url('../icons/shield-alert.svg')"></span>
+        <div>
+          <div class="callout__title">安全红线</div>
+          <p>密钥不能写进网页代码、不能提交到仓库、不能发到群里。不用时直接在 GitHub 后台撤销该令牌，立即失效。令牌泄漏等于把仓库的写权限交出去。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 07 对比 ===================== -->
+<section class="section" id="compare">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">07 / 怎么选</span>
+        <span class="sec-index__label">Pick a path</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">先跑通，<br />再谈自动化。</h2>
+        <p class="lead reveal" style="--d:1">
+          主路径建议：零基础先走手动上传，把网站跑通；需要频繁改页面时再切到 AI 接管，只配置一次密钥，之后用自然语言提需求就能自动更新站点。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">两条路径不冲突，<br />是同一条路上的两个阶段。</div>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col">维度</th>
+            <th scope="col"><span class="compare__h"><span class="tag">路径一</span>手动上传</span></th>
+            <th scope="col" class="th-ai"><span class="compare__h"><span class="tag tag--ai">路径二</span>AI 接管</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">适合场景</th>
+            <td>一次性上线、改动很少</td>
+            <td class="col-ai">需要频繁迭代、口述改页面</td>
+          </tr>
+          <tr>
+            <th scope="row">是否需要 PAT</th>
+            <td><span class="rowcell"><span class="ic ic--sm m-yes" style="--ic:url('../icons/circle-check.svg')"></span>不需要</span></td>
+            <td class="col-ai"><span class="rowcell"><span class="ic ic--sm m-no" style="--ic:url('../icons/key-round.svg')"></span>需要，或用 OAuth 授权替代</span></td>
+          </tr>
+          <tr>
+            <th scope="row">更新方式</th>
+            <td>手动拖拽文件覆盖上传</td>
+            <td class="col-ai">AI 改代码并自动推送</td>
+          </tr>
+          <tr>
+            <th scope="row">优点</th>
+            <td>入门简单，不用装软件</td>
+            <td class="col-ai">迭代极快，说需求就改网站</td>
+          </tr>
+          <tr>
+            <th scope="row">缺点</th>
+            <td>反复修改很繁琐</td>
+            <td class="col-ai">需要一次性配置环境与密钥</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compare-mobile reveal">
+      <div class="cmp-card">
+        <div class="cmp-card__h">路径一 · 手动上传</div>
+        <div class="cmp-card__row"><span class="k">适合场景</span><span>一次性上线、改动很少</span></div>
+        <div class="cmp-card__row"><span class="k">是否需要 PAT</span><span>不需要</span></div>
+        <div class="cmp-card__row"><span class="k">更新方式</span><span>手动拖拽文件覆盖上传</span></div>
+        <div class="cmp-card__row"><span class="k">优点</span><span>入门简单，不用装软件</span></div>
+        <div class="cmp-card__row"><span class="k">缺点</span><span>反复修改很繁琐</span></div>
+      </div>
+      <div class="cmp-card">
+        <div class="cmp-card__h">路径二 · AI 接管</div>
+        <div class="cmp-card__row"><span class="k">适合场景</span><span>需要频繁迭代、口述改页面</span></div>
+        <div class="cmp-card__row"><span class="k">是否需要 PAT</span><span>需要，或用 OAuth 授权替代</span></div>
+        <div class="cmp-card__row"><span class="k">更新方式</span><span>AI 改代码并自动推送</span></div>
+        <div class="cmp-card__row"><span class="k">优点</span><span>迭代极快，说需求就改网站</span></div>
+        <div class="cmp-card__row"><span class="k">缺点</span><span>需要一次性配置环境与密钥</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 08 闭环 ===================== -->
+<section class="section section--night" id="loop">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num" style="color:#9fb0ff">08 / 闭环</span>
+        <span class="sec-index__label" style="color:rgba(255,255,255,.5)">The loop</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal" style="color:#f4f2ec">上线不是终点，<br />是下一轮的起点。</h2>
+        <p class="lead reveal" style="--d:1;color:rgba(242,240,234,.62)">
+          五步构成一个可以长期运转的闭环。点任意一步，看它在这一轮里做什么。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2;color:rgba(255,255,255,.4)">验证之后回到第 3 步，<br />才是 VibeCoding 的常态。</div>
+    </div>
+
+    <div class="loopwrap">
+      <div class="loop reveal">
+        <button class="loop__node is-active" data-loop="0" aria-pressed="true">
+          <span class="n">01</span>
+          <span class="loop__txt">
+            <span class="t">构思 · 想清楚要什么</span>
+            <span class="d">站点目标、页面结构、文案初稿</span>
+          </span>
+          <span class="loop__tool"><img src="assets/logos/doubao.png" alt="" />豆包</span>
+        </button>
+        <button class="loop__node" data-loop="1" aria-pressed="false">
+          <span class="n">02</span>
+          <span class="loop__txt">
+            <span class="t">实现 · 做出可运行原型</span>
+            <span class="d">框架 + 组件库，先生成再调试</span>
+          </span>
+          <span class="loop__tool"><img src="assets/logos/trae.png" alt="" />Trea</span>
+        </button>
+        <button class="loop__node" data-loop="2" aria-pressed="false">
+          <span class="n">03</span>
+          <span class="loop__txt">
+            <span class="t">迭代 · 反复打磨细节</span>
+            <span class="d">口述改样式与功能，多轮微调</span>
+          </span>
+          <span class="loop__tool"><img src="assets/logos/workbuddy.svg" alt="" />WorkBuddy</span>
+        </button>
+        <button class="loop__node" data-loop="3" aria-pressed="false">
+          <span class="n">04</span>
+          <span class="loop__txt">
+            <span class="t">上线 · 推送即发布</span>
+            <span class="d">手动上传，或由 AI 推送自动部署</span>
+          </span>
+          <span class="loop__tool"><img src="assets/logos/github.svg" alt="" />Pages</span>
+        </button>
+        <button class="loop__node" data-loop="4" aria-pressed="false">
+          <span class="n">05</span>
+          <span class="loop__txt">
+            <span class="t">验证 · 看线上真实效果</span>
+            <span class="d">不满意继续提需求，回到第 3 步</span>
+          </span>
+          <span class="loop__tool"><span class="ic" style="--ic:url('../icons/repeat.svg');width:13px;height:13px"></span>回到迭代</span>
+        </button>
+        <div class="loop__back">
+          <span class="ic ic--sm" style="--ic:url('../icons/repeat.svg')"></span>
+          验证 → 迭代：这一圈能一直转下去
+        </div>
+      </div>
+
+      <div class="loop__detail reveal" style="--d:1" id="loopDetail" aria-live="polite">
+        <div class="loop__ditem" data-i="0">
+          <div class="k">STEP 01 · IDEATION</div>
+          <h3>把模糊想法变成结构</h3>
+          <p>描述站点目标、页面风格、文案与结构，让工具产出整体思路与项目框架。这一步的产出不是代码，而是一份「能交给下一步的需求」。</p>
+          <span class="tip"><span class="ic ic--sm" style="--ic:url('../icons/lightbulb.svg')"></span>先把「给谁看、看什么」写清楚</span>
+        </div>
+        <div class="loop__ditem" data-i="1" hidden>
+          <div class="k">STEP 02 · BUILD</div>
+          <h3>基于选定框架生成页面</h3>
+          <p>用 Tailwind + DaisyUI 这类组合生成并调试页面代码，先做出能看的原型。不要在这一步追求完美，能跑起来比好看更重要。</p>
+          <span class="tip"><span class="ic ic--sm" style="--ic:url('../icons/code-2.svg')"></span>原型跑通，再谈细节</span>
+        </div>
+        <div class="loop__ditem" data-i="2" hidden>
+          <div class="k">STEP 03 · ITERATE</div>
+          <h3>用最省额度的方式打磨</h3>
+          <p>反复口述需求改细节、调样式，用积分消耗更低的工具承担多轮修改。改动越具体，返工越少：说「按钮换成品牌蓝」比说「再好看点」有效得多。</p>
+          <span class="tip"><span class="ic ic--sm" style="--ic:url('../icons/wand-2.svg')"></span>需求写具体，是最高效的提示词</span>
+        </div>
+        <div class="loop__ditem" data-i="3" hidden>
+          <div class="k">STEP 04 · SHIP</div>
+          <h3>简单场景手动，长期项目自动</h3>
+          <p>简单场景手动上传；要自动化则配好 PAT，由 AI 推送改动并自动部署。上线动作一旦变成「push 即发布」，你就不会再害怕改版。</p>
+          <span class="tip"><span class="ic ic--sm" style="--ic:url('../icons/rocket.svg')"></span>main 分支一变，Pages 自动重建</span>
+        </div>
+        <div class="loop__ditem" data-i="4" hidden>
+          <div class="k">STEP 05 · VERIFY</div>
+          <h3>打开链接，再提一轮需求</h3>
+          <p>打开线上链接看实际效果，不满意继续提需求，形成持续开发闭环。真正的成长发生在第 2 轮、第 3 轮修改，而不是第一次生成。</p>
+          <span class="tip"><span class="ic ic--sm" style="--ic:url('../icons/repeat.svg')"></span>验证 → 迭代，循环起来</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 09 常见坑 ===================== -->
+<section class="section" id="pitfalls">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">09 / 常见坑</span>
+        <span class="sec-index__label">Debug faster</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">四个高频问题，<br />和它们的排查顺序。</h2>
+        <p class="lead reveal" style="--d:1">报错信息通常不指向真正的原因。按下面的顺序查，比重新读一遍教程快得多。</p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">先怀疑路径，<br />再怀疑权限，<br />最后怀疑缓存。</div>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary><span class="q">01</span>页面空白，图片和样式都不显示<span class="ic ic--chev" style="--ic:url('../icons/chevron-down.svg')"></span></summary>
+        <div class="a">
+          <p>先查资源路径是否写成了本地绝对路径（如 <code>D:\网站\img\a.png</code>），这类路径在本地能打开、上线必然 404；再确认根目录有 <code>index.html</code>，且文件名大小写与引用一致（Linux 服务器区分大小写）。</p>
+          <div class="fix">
+            <div class="lbl">FIX</div>
+            <p>全部改成相对路径 <code>./assets/...</code>；打开浏览器控制台看 Network，红色请求就是找不到的文件。</p>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="q">02</span>GitHub 打不开、推送一直超时<span class="ic ic--chev" style="--ic:url('../icons/chevron-down.svg')"></span></summary>
+        <div class="a">
+          <p>先换网络环境，或使用 Watt Toolkit（瓦特工具箱）改善连通性后重试。它只优化访问开源项目的连通性，按现行网络管理规定合规使用。</p>
+          <div class="fix">
+            <div class="lbl">FIX</div>
+            <p>开启工具后重试 clone / push；仍失败时改用网页上传，先让网站跑通。</p>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="q">03</span>推送认证失败（Authentication failed）<span class="ic ic--chev" style="--ic:url('../icons/chevron-down.svg')"></span></summary>
+        <div class="a">
+          <p>检查 PAT 是否勾了 <b>Contents</b> 读写权限、是否已过期、是否误用了别的仓库权限。细粒度令牌只对勾选的仓库生效，跨仓库使用一定失败。</p>
+          <div class="fix">
+            <div class="lbl">FIX</div>
+            <p>回到 token 设置核对 Repository access 与 Contents 权限；改完重新复制令牌，并在本地更新凭证。</p>
+          </div>
+        </div>
+      </details>
+      <details>
+        <summary><span class="q">04</span>改了代码，线上却没生效<span class="ic ic--chev" style="--ic:url('../icons/chevron-down.svg')"></span></summary>
+        <div class="a">
+          <p>确认提交确实落在 <b>main</b> 分支（而不是新建的分支或 PR 里），并等待 Pages 重建完成再刷新。浏览器缓存也可能让你看到旧版本。</p>
+          <div class="fix">
+            <div class="lbl">FIX</div>
+            <p>看仓库 Actions 的部署记录是否成功；强制刷新（Ctrl/Cmd + Shift + R）或开无痕窗口验证。</p>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 10 今天开始 ===================== -->
+<section class="section section--night closing" id="start">
+  <div class="closing__glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num" style="color:#9fb0ff">10 / 今天开始</span>
+        <span class="sec-index__label" style="color:rgba(255,255,255,.5)">Start now</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="reveal">焦虑来自「还没开始」，<br />而<em>第一次上线</em>，<br class="br-wide" />只需要一个下午。</h2>
+      </div>
+    </div>
+
+    <div class="todo">
+      <article class="todo__item reveal">
+        <div class="k">10 MIN</div>
+        <h4>建仓库，传首页</h4>
+        <p>新建 Public 仓库，把带 <code>index.html</code> 的文件夹拖进去提交。</p>
+      </article>
+      <article class="todo__item reveal" style="--d:1">
+        <div class="k">20 MIN</div>
+        <h4>开 Pages，拿到链接</h4>
+        <p>Settings → Pages → main / root → Save，等 1–3 分钟，复制访问地址。</p>
+      </article>
+      <article class="todo__item reveal" style="--d:2">
+        <div class="k">ONGOING</div>
+        <h4>发出去，换一次反馈</h4>
+        <p>把链接发给一个人，收集一句具体意见，然后回到第 3 步改一版。</p>
+      </article>
+    </div>
+
+    <div class="closing__foot">
+      <div class="closing__sign reveal">
+        谢谢，去把第一个链接跑出来。
+        <span>拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会</span>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap" class="reveal">
+        <a class="btn btn--night" href="#top">回到开头 <span class="ic ic--sm" style="--ic:url('../icons/arrow-up-right.svg')"></span></a>
+        <a class="btn btn--night-ghost" href="#manual">重看部署路径</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div>内容整理自《VibeCoding 建站实操指南：工具、技术栈与 GitHub Pages 部署》</div>
+    <div class="footer__links">
+      <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener">GitHub Pages 文档</a>
+      <a href="https://github.com/17762396674-star/vibecoding-share" target="_blank" rel="noopener">本站仓库</a>
+      <span>界面截图来源：GitHub Docs / 各产品官网</span>
+    </div>
+  </div>
+</footer>
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="查看大图">
+  <button class="lightbox__close" id="lbClose" aria-label="关闭">
+    <span class="ic" style="--ic:url('../icons/x.svg')"></span>
+  </button>
+  <div>
+    <img id="lbImg" src="" alt="" />
+    <div class="lightbox__cap" id="lbCap"></div>
+  </div>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
