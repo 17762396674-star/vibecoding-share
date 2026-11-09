@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会</title>
-<meta name="description" content="VibeCoding 技术成长分享交流会：从工具选择、技术栈、GitHub Pages 部署到 AI 接管迭代，再到网站规模进阶与 AI 时代的专业判断，用一条完整链路把想法变成上线可访问的网站。" />
+<meta name="description" content="VibeCoding 技术成长分享交流会：从工具选择、技术栈、GitHub Pages 部署到 AI 接管迭代，再到网站规模进阶、AI 时代的专业判断，并完整记录本站由 AI 生成的提示词、判断与工作流。" />
 <meta name="theme-color" content="#0b0b0d" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会" />
-<meta property="og:description" content="五个环节、两条部署路径、四条升级线：从一句自然语言，到一个真正上线的网站。" />
+<meta property="og:description" content="五个环节、两条部署路径、四条升级线，以及一份完整的 AI 生成记录：从一句自然语言，到一个真正上线的网站。" />
 <meta property="og:image" content="assets/shots/github-home.webp" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -39,6 +39,7 @@
       <a class="nav__link" href="#capacity">能力边界</a>
       <a class="nav__link" href="#scale">规模进阶</a>
       <a class="nav__link" href="#ai">AI 时代</a>
+      <a class="nav__link" href="#build">本站幕后</a>
     </nav>
 
     <div class="nav__right">
@@ -67,7 +68,8 @@
   <a href="#capacity" data-rail="capacity"><span>10 能力边界</span></a>
   <a href="#scale" data-rail="scale"><span>11 规模进阶</span></a>
   <a href="#ai" data-rail="ai"><span>12 AI 时代</span></a>
-  <a href="#start" data-rail="start"><span>13 寄语</span></a>
+  <a href="#build" data-rail="build"><span>13 本站幕后</span></a>
+  <a href="#start" data-rail="start"><span>14 寄语</span></a>
 </aside>
 
 <main id="main">
@@ -1305,19 +1307,379 @@
       <p>AI 是工具，不是对手。<br />未来不是 AI 取代程序员，<br />而是<em>会用 AI 的程序员</em><br />取代不会用 AI 的程序员。</p>
       <div class="stamp">
         《网站规模进阶与 AI 时代认知升华》<br />
-        —— 分享会结语
+        —— 第二份文档的结论
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== 13 寄语 ===================== -->
+<!-- ===================== 13 本站幕后 ===================== -->
+<section class="section" id="build">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">13 / 本站幕后</span>
+        <span class="sec-index__label">Made with AI</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">你正在看的这一页，<br />就是 AI 做的。</h2>
+        <p class="lead reveal" style="--d:1">
+          不只文案由 AI 整理，版式、组件、截图与部署也由它完成。这一节把过程摊开：我实际说了哪几句话、它怎么判断、踩过哪些坑。
+          结论先放在这里——做一个能讲、能发、能长期留存的网站，已经比做一份 PPT 更省事。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">一次施工记录，<br />也是一份证据。</div>
+    </div>
+
+    <div class="proof reveal">
+      <div class="proof__item">
+        <b>03</b>
+        <span>轮主提示词</span>
+        <em>从建站，到加上这一节</em>
+      </div>
+      <div class="proof__item">
+        <b>02</b>
+        <span>份源文档</span>
+        <em>建站指南 + 认知升华</em>
+      </div>
+      <div class="proof__item">
+        <b>14</b>
+        <span>个章节</span>
+        <em>一套导航贯通到底</em>
+      </div>
+      <div class="proof__item">
+        <b>00</b>
+        <span>行手写代码</span>
+        <em>全部由 Agent 生成</em>
+      </div>
+    </div>
+
+    <!-- 01 prompts -->
+    <div class="subhead reveal">
+      <span class="subhead__k">01 / PROMPTS</span>
+      <div>
+        <h3>我实际说的三句话</h3>
+        <p>没有画一张线框图，也没有写一行代码。三轮主对话定下结构与方向，其余都是微调。</p>
+      </div>
+    </div>
+
+    <div class="pstack">
+      <article class="pcard reveal">
+        <div class="pcard__rail" aria-hidden="true"><span class="pcard__n">01</span><span class="pcard__line"></span></div>
+        <div class="pcard__body">
+          <div class="pcard__head">
+            <span class="pcard__tag">建站</span>
+            <span class="pcard__meta">首次对话 · 从零到上线</span>
+          </div>
+          <span class="pcard__qlabel">需求原话 · 节选</span>
+          <blockquote class="pcard__quote">根据文件夹中的 Markdown 文档，制作一个主题为「拥抱 AI，拒绝焦虑——VibeCoding 技术成长分享交流会」的展示网站。内容基于文档整理归纳；用于现场演示与浏览讲解，多放图标和图片；风格要求高级、简约、大方、重点突出、层次清晰，响应式与浏览体验要好。完成后上传到我的 GitHub 仓库。</blockquote>
+          <div class="pcard__grid">
+            <div><span class="k">它怎么理解</span><p>不是「做一个网页」，而是「把一份文档重组成一条能在现场讲下去的线」。</p></div>
+            <div><span class="k">它做了什么</span><p>拆章节、定设计 token、手写组件库、实拍真实截图、部署 GitHub Pages。</p></div>
+            <div><span class="k">产出</span><p><code>index.html</code> · <code>style.css</code> · <code>main.js</code> · 一个公开链接</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal" style="--d:1">
+        <div class="pcard__rail" aria-hidden="true"><span class="pcard__n">02</span><span class="pcard__line"></span></div>
+        <div class="pcard__body">
+          <div class="pcard__head">
+            <span class="pcard__tag">扩充</span>
+            <span class="pcard__meta">第二次对话 · 加一份文档，不改一套风格</span>
+          </div>
+          <span class="pcard__qlabel">需求原话 · 节选</span>
+          <blockquote class="pcard__quote">把这份关于「网站规模进阶与 AI 时代认知升华」的新文档内容添加到现有网站中，保持与之前完全一致的风格（排版、配色、字体、组件）和交互方式（导航、跳转、展开折叠），确保无缝衔接，并正确接入现有导航与目录。</blockquote>
+          <div class="pcard__grid">
+            <div><span class="k">它怎么理解</span><p>加内容不是加页面，而是让新章节看起来「本来就在那里」。</p></div>
+            <div><span class="k">它做了什么</span><p>复用既有组件，新增 3 个章节，同步导航、侧栏与 README，不改动任何设计 token。</p></div>
+            <div><span class="k">产出</span><p>能力边界 · 规模进阶 · AI 时代</p></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="pcard reveal" style="--d:2">
+        <div class="pcard__rail" aria-hidden="true"><span class="pcard__n">03</span><span class="pcard__line"></span></div>
+        <div class="pcard__body">
+          <div class="pcard__head">
+            <span class="pcard__tag">自指</span>
+            <span class="pcard__meta">第三次对话 · 你正在读的这一节</span>
+          </div>
+          <span class="pcard__qlabel">需求原话 · 节选</span>
+          <blockquote class="pcard__quote">在现有网站末尾新增一个板块，把「网站由 AI 生成」这一事实作为亮点呈现：列出构建网站所用的提示词、AI 的思考过程与工作流程；说明用网站做演示目前比用 PPT 更简单，加入网站与 PPT 的对比，突出 PPT 的痛点。</blockquote>
+          <div class="pcard__grid">
+            <div><span class="k">它怎么理解</span><p>这一节必须能自我证明——写它的提示词，就贴在它里面。</p></div>
+            <div><span class="k">它做了什么</span><p>设计「证据条 → 提示词 → 判断记录 → 对比表 → 现场演示」五段结构。</p></div>
+            <div><span class="k">产出</span><p><code>13 / 本站幕后</code>，也就是这里</p></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- 02 decisions -->
+    <div class="subhead reveal">
+      <span class="subhead__k">02 / DECISIONS</span>
+      <div>
+        <h3>它没有一次写对，是边看边改。</h3>
+        <p>下面四条，是过程中真正改变结果的判断。每条都从一个「不对劲」开始——看它怎么想，比看它写了什么更有用。</p>
+      </div>
+    </div>
+
+    <div class="dec">
+      <article class="dec__card reveal">
+        <div class="dec__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/book-open.svg')"></span>
+          判断记录 01
+          <span class="dec__n">ORDER</span>
+        </div>
+        <h4>两份文档，不能直接拼</h4>
+        <div class="dec__row"><span class="dec__k">看到</span><p>一份教怎么建站，一份讲规模与认知。主题相邻，但不是同一条线。</p></div>
+        <div class="dec__row"><span class="dec__k">判断</span><p>按原文顺序拼接，会变成两份笔记的合集，现场讲不下去。</p></div>
+        <div class="dec__row dec__row--do"><span class="dec__k">做法</span><p>用「先能开始 → 再谈上限」重排：工具、部署、闭环在前，能力边界、规模与 AI 时代在后。</p></div>
+      </article>
+
+      <article class="dec__card reveal" style="--d:1">
+        <div class="dec__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/image.svg')"></span>
+          判断记录 02
+          <span class="dec__n">EVIDENCE</span>
+        </div>
+        <h4>截图不能靠想象</h4>
+        <div class="dec__row"><span class="dec__k">看到</span><p>讲 GitHub 上传与 PAT，却配示意图，现场说服力为零。</p></div>
+        <div class="dec__row"><span class="dec__k">判断</span><p>教程类内容，真实界面比任何插画都有效。</p></div>
+        <div class="dec__row dec__row--do"><span class="dec__k">做法</span><p>用浏览器自动化打开产品页与 GitHub Docs，实拍上传入口、令牌提示，再统一转 webp 压缩。</p></div>
+      </article>
+
+      <article class="dec__card reveal" style="--d:2">
+        <div class="dec__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/gauge.svg')"></span>
+          判断记录 03
+          <span class="dec__n">ON STAGE</span>
+        </div>
+        <h4>投影仪不是显示器</h4>
+        <div class="dec__row"><span class="dec__k">看到</span><p>深色章节紧接浅色章节，锚点跳转处会露出一条白边；长页面没有方位感。</p></div>
+        <div class="dec__row"><span class="dec__k">判断</span><p>这是演示场景的问题，不是审美问题。</p></div>
+        <div class="dec__row dec__row--do"><span class="dec__k">做法</span><p>深色段加负 <code>scroll-margin</code>；导航随背景自动换色；固定目录 + 侧栏进度 + 方向键翻章。</p></div>
+      </article>
+
+      <article class="dec__card reveal" style="--d:3">
+        <div class="dec__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/mouse-pointer-click.svg')"></span>
+          判断记录 04
+          <span class="dec__n">SMALL SCREEN</span>
+        </div>
+        <h4>小屏是第二个现场</h4>
+        <div class="dec__row"><span class="dec__k">看到</span><p>对比表在 390px 宽度必然横向溢出，网格子项还会把页面撑破。</p></div>
+        <div class="dec__row"><span class="dec__k">判断</span><p>缩小字号只能掩盖问题，不能解决阅读。</p></div>
+        <div class="dec__row dec__row--do"><span class="dec__k">做法</span><p>断点处隐藏表格、另渲染一套卡片；给网格子项补 <code>min-width:0</code>；逐档截图验收。</p></div>
+      </article>
+    </div>
+
+    <div class="callout callout--info reveal">
+      <span class="ic" style="--ic:url('../icons/shield-check.svg')"></span>
+      <div>
+        <div class="callout__title">还有一类问题，不靠灵感，靠清单</div>
+        <p>图标 404、锚点错位、键盘焦点丢失、明暗交界处闪白边——上线前逐项过一遍，比现场解释便宜得多。</p>
+      </div>
+    </div>
+
+    <!-- 03 workflow -->
+    <div class="subhead reveal">
+      <span class="subhead__k">03 / WORKFLOW</span>
+      <div>
+        <h3>一条可以复用的生成流水线</h3>
+        <p>从两份文档到一个公开链接，中间只有五个动作。每一步都能回退，改一句话就能重跑。</p>
+      </div>
+    </div>
+
+    <div class="chain reveal">
+      <div class="chain__node">
+        <div class="k">STEP 01</div>
+        <div class="t">读文档</div>
+        <div class="d">提取论点，标出必须保留的句子</div>
+      </div>
+      <div class="chain__node">
+        <div class="k">STEP 02</div>
+        <div class="t">拆结构</div>
+        <div class="d">章节顺序、每节要证明什么</div>
+      </div>
+      <div class="chain__node chain__node--accent">
+        <div class="k">STEP 03</div>
+        <div class="t">立规范</div>
+        <div class="d">颜色、字号、间距、组件一次定死</div>
+      </div>
+      <div class="chain__node">
+        <div class="k">STEP 04</div>
+        <div class="t">写与拍</div>
+        <div class="d">页面、交互、真实截图同步产出</div>
+      </div>
+      <div class="chain__node">
+        <div class="k">STEP 05</div>
+        <div class="t">自检上线</div>
+        <div class="d">断点、404、键盘操作，push 即发布</div>
+      </div>
+    </div>
+
+    <p class="flow-note reveal">这条流水线里，最花时间的不是写代码，是判断：哪句话该留、哪张图能证明、哪一段会让观众迷路。AI 负责施工，人负责决定施工什么。</p>
+
+    <!-- 04 website vs ppt -->
+    <div class="subhead reveal">
+      <span class="subhead__k">04 / SITE VS PPT</span>
+      <div>
+        <h3>为什么现在用网站讲，比 PPT 省事</h3>
+        <p>不是因为它更酷。而是因为 PPT 最耗时的几件事——找图、对齐、改版——恰好是 AI 最擅长、也最不嫌烦的事。</p>
+      </div>
+    </div>
+
+    <div class="pain">
+      <article class="pain__card reveal">
+        <span class="ic ic--lg" style="--ic:url('../icons/image.svg')"></span>
+        <h4>图片收集</h4>
+        <p>找图、下载、裁切、压缩、对齐。一张图十分钟，十张图就是一上午。</p>
+        <div class="pain__cost">≈ 2 小时 / 10 张图</div>
+      </article>
+      <article class="pain__card reveal" style="--d:1">
+        <span class="ic ic--lg" style="--ic:url('../icons/layers.svg')"></span>
+        <h4>排版返工</h4>
+        <p>多一行字就溢出一页，字号、行距、页码、目录全要跟着调。</p>
+        <div class="pain__cost">每改一次 · 重排一轮</div>
+      </article>
+      <article class="pain__card reveal" style="--d:2">
+        <span class="ic ic--lg" style="--ic:url('../icons/repeat.svg')"></span>
+        <h4>版本混乱</h4>
+        <p>最终版、最终版 2、真的最终版；U 盘里永远有一份更新的。</p>
+        <div class="pain__cost">永远说不清哪版对</div>
+      </article>
+      <article class="pain__card reveal" style="--d:3">
+        <span class="ic ic--lg" style="--ic:url('../icons/triangle-alert.svg')"></span>
+        <h4>现场翻车</h4>
+        <p>字体缺失、比例不对、视频不播，开场十分钟都在救火。</p>
+        <div class="pain__cost">一次就够难忘</div>
+      </article>
+    </div>
+
+    <div class="compare-wrap reveal">
+      <table class="compare">
+        <thead>
+          <tr>
+            <th scope="col">环节</th>
+            <th scope="col"><span class="compare__h"><span class="tag">传统</span>PPT 演示</span></th>
+            <th scope="col" class="th-ai"><span class="compare__h"><span class="tag tag--ai">这一站</span>网站演示</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">素材收集</th>
+            <td>手动找图、下载、裁切、压缩、对齐，10 张图约 2 小时</td>
+            <td class="col-ai">AI 实拍真实界面，自动转 webp，一次配齐</td>
+          </tr>
+          <tr>
+            <th scope="row">内容修改</th>
+            <td>改一句话，牵动字号、行距、页码与目录</td>
+            <td class="col-ai">说一句话，AI 改代码，push 后自动上线</td>
+          </tr>
+          <tr>
+            <th scope="row">排版一致</th>
+            <td>靠格式刷与肉眼对齐，越改越乱</td>
+            <td class="col-ai">一套设计 token 管住颜色、字号与间距</td>
+          </tr>
+          <tr>
+            <th scope="row">现场演示</th>
+            <td>字体缺失、动画卡顿、投影比例不对</td>
+            <td class="col-ai">浏览器打开即讲，F11 全屏，方向键翻章</td>
+          </tr>
+          <tr>
+            <th scope="row">分享分发</th>
+            <td>发 20MB 附件，微信里传来传去</td>
+            <td class="col-ai">一个链接，手机电脑都能看，永远最新版</td>
+          </tr>
+          <tr>
+            <th scope="row">版本管理</th>
+            <td><code>最终版_v7_真的最终版.pptx</code></td>
+            <td class="col-ai">git 提交记录，随时回退到任一版本</td>
+          </tr>
+          <tr>
+            <th scope="row">长期复用</th>
+            <td>明年活动，从头再做一遍</td>
+            <td class="col-ai">内容常驻，持续迭代，还能当作品集</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compare-mobile reveal">
+      <div class="cmp-card">
+        <div class="cmp-card__h">传统 · PPT 演示</div>
+        <div class="cmp-card__row"><span class="k">素材收集</span><span>手动找图、裁切、压缩、对齐，10 张图约 2 小时</span></div>
+        <div class="cmp-card__row"><span class="k">内容修改</span><span>改一句话，牵动字号、行距、页码与目录</span></div>
+        <div class="cmp-card__row"><span class="k">排版一致</span><span>靠格式刷与肉眼对齐，越改越乱</span></div>
+        <div class="cmp-card__row"><span class="k">现场演示</span><span>字体缺失、动画卡顿、投影比例不对</span></div>
+        <div class="cmp-card__row"><span class="k">分享分发</span><span>发 20MB 附件，微信里传来传去</span></div>
+        <div class="cmp-card__row"><span class="k">版本管理</span><span>最终版、最终版 2、真的最终版</span></div>
+        <div class="cmp-card__row"><span class="k">长期复用</span><span>明年活动，从头再做一遍</span></div>
+      </div>
+      <div class="cmp-card">
+        <div class="cmp-card__h">这一站 · 网站演示</div>
+        <div class="cmp-card__row"><span class="k">素材收集</span><span>AI 实拍真实界面，自动转 webp，一次配齐</span></div>
+        <div class="cmp-card__row"><span class="k">内容修改</span><span>说一句话，AI 改代码，push 后自动上线</span></div>
+        <div class="cmp-card__row"><span class="k">排版一致</span><span>一套设计 token 管住颜色、字号与间距</span></div>
+        <div class="cmp-card__row"><span class="k">现场演示</span><span>浏览器打开即讲，F11 全屏，方向键翻章</span></div>
+        <div class="cmp-card__row"><span class="k">分享分发</span><span>一个链接，手机电脑都能看，永远最新版</span></div>
+        <div class="cmp-card__row"><span class="k">版本管理</span><span>git 提交记录，随时回退到任一版本</span></div>
+        <div class="cmp-card__row"><span class="k">长期复用</span><span>内容常驻，持续迭代，还能当作品集</span></div>
+      </div>
+    </div>
+
+    <div class="callout callout--info reveal">
+      <span class="ic" style="--ic:url('../icons/lightbulb.svg')"></span>
+      <div>
+        <div class="callout__title">不是取代，是分工</div>
+        <p>一次性、离线、强排版的场合，PPT 仍然合适；只要内容会改、要发链接、要长期留存，网站就是更省事的那一个。这一次，我们选了后者。</p>
+      </div>
+    </div>
+
+    <!-- presenter -->
+    <div class="present reveal">
+      <div class="present__mock">
+        <div class="present__bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="present__url">17762396674-star.github.io/vibecoding-share</span>
+          <span class="present__live">LIVE</span>
+        </div>
+        <div class="present__stage">
+          <span class="present__kicker">现场演示 · 第 01 章</span>
+          <div class="present__title">拥抱 AI，拒绝焦虑</div>
+          <div class="present__keys"><kbd>←</kbd><kbd>→</kbd><span>翻章</span><kbd>F11</kbd><span>全屏</span></div>
+        </div>
+      </div>
+      <div class="present__side">
+        <h4>开场只需要三步</h4>
+        <ol class="present__steps">
+          <li><span class="n">1</span><span><b>打开链接，F11 全屏。</b>不用装 Office，不用带 U 盘，不用等投影仪识别分辨率。</span></li>
+          <li><span class="n">2</span><span><b>← / → 翻章。</b>和 PPT 一样顺手，还能点目录直接跳到某一节。</span></li>
+          <li><span class="n">3</span><span><b>把链接发出去。</b>观众看到的就是你正在讲的这一版，没有附件，也没有「最终版」。</span></li>
+        </ol>
+        <p class="present__note">投影仪只认分辨率，浏览器只认链接。少一道导出，就少一次翻车。</p>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <p>PPT 交付的是一份<em>文件</em>，<br />网站交付的是一个<em>链接</em>。</p>
+      <div class="stamp">
+        文件会过期，链接永远是最新版<br />
+        —— 这一节，就是它自己生成的
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 14 寄语 ===================== -->
 <section class="section section--night closing" id="start">
   <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-index reveal">
-        <span class="sec-num" style="color:#9fb0ff">13 / 寄语</span>
+        <span class="sec-num" style="color:#9fb0ff">14 / 寄语</span>
         <span class="sec-index__label" style="color:rgba(255,255,255,.5)">Keep exploring</span>
       </div>
       <div class="sec-head__main">
@@ -1367,7 +1729,7 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <div>内容整理自《VibeCoding 建站实操指南：工具、技术栈与 GitHub Pages 部署》<br />与《网站规模进阶与 AI 时代认知升华》（部分内容由豆包工作 AI 生成）</div>
+    <div>内容整理自《VibeCoding 建站实操指南：工具、技术栈与 GitHub Pages 部署》<br />与《网站规模进阶与 AI 时代认知升华》<br />本站页面由 AI Agent 生成：从提示词到部署，未手写一行代码</div>
     <div class="footer__links">
       <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener">GitHub Pages 文档</a>
       <a href="https://github.com/17762396674-star/vibecoding-share" target="_blank" rel="noopener">本站仓库</a>
