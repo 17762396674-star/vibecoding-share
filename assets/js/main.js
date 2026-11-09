@@ -92,26 +92,28 @@
     revealEls.forEach(function (el) { el.classList.add('is-in'); });
   }
 
-  /* ---------- tabs ---------- */
-  var tabs = $$('.tab');
-  function selectTab(tab) {
-    tabs.forEach(function (t) {
-      var on = t === tab;
-      t.setAttribute('aria-selected', String(on));
-      t.tabIndex = on ? 0 : -1;
-      var panel = document.getElementById(t.getAttribute('aria-controls'));
-      if (panel) panel.hidden = !on;
-    });
-  }
-  tabs.forEach(function (tab, i) {
-    tab.addEventListener('click', function () { selectTab(tab); });
-    tab.addEventListener('keydown', function (e) {
-      var k = e.key, next = null;
-      if (k === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
-      else if (k === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
-      else if (k === 'Home') next = tabs[0];
-      else if (k === 'End') next = tabs[tabs.length - 1];
-      if (next) { e.preventDefault(); next.focus(); selectTab(next); }
+  /* ---------- tabs（按 tablist 分组，支持多组） ---------- */
+  $$('.tabs').forEach(function (group) {
+    var items = $$('.tab', group);
+    function select(tab) {
+      items.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.hidden = !on;
+      });
+    }
+    items.forEach(function (tab, i) {
+      tab.addEventListener('click', function () { select(tab); });
+      tab.addEventListener('keydown', function (e) {
+        var k = e.key, next = null;
+        if (k === 'ArrowRight') next = items[(i + 1) % items.length];
+        else if (k === 'ArrowLeft') next = items[(i - 1 + items.length) % items.length];
+        else if (k === 'Home') next = items[0];
+        else if (k === 'End') next = items[items.length - 1];
+        if (next) { e.preventDefault(); next.focus(); select(next); }
+      });
     });
   });
 

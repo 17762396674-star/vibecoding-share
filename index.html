@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会</title>
-<meta name="description" content="VibeCoding 技术成长分享交流会：从工具选择、技术栈、GitHub Pages 部署到 AI 接管迭代，用一条完整链路把想法变成上线可访问的网站。" />
+<meta name="description" content="VibeCoding 技术成长分享交流会：从工具选择、技术栈、GitHub Pages 部署到 AI 接管迭代，再到网站规模进阶与 AI 时代的专业判断，用一条完整链路把想法变成上线可访问的网站。" />
 <meta name="theme-color" content="#0b0b0d" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会" />
-<meta property="og:description" content="四个环节、两条部署路径：从一句自然语言，到一个真正上线的网站。" />
+<meta property="og:description" content="五个环节、两条部署路径、四条升级线：从一句自然语言，到一个真正上线的网站。" />
 <meta property="og:image" content="assets/shots/github-home.webp" />
 <link rel="stylesheet" href="assets/css/style.css" />
 </head>
@@ -36,6 +36,9 @@
       <a class="nav__link" href="#agent">AI 接管</a>
       <a class="nav__link" href="#loop">闭环</a>
       <a class="nav__link" href="#pitfalls">避坑</a>
+      <a class="nav__link" href="#capacity">能力边界</a>
+      <a class="nav__link" href="#scale">规模进阶</a>
+      <a class="nav__link" href="#ai">AI 时代</a>
     </nav>
 
     <div class="nav__right">
@@ -61,7 +64,10 @@
   <a href="#compare" data-rail="compare"><span>07 路径对比</span></a>
   <a href="#loop" data-rail="loop"><span>08 闭环流程</span></a>
   <a href="#pitfalls" data-rail="pitfalls"><span>09 常见坑</span></a>
-  <a href="#start" data-rail="start"><span>10 今天开始</span></a>
+  <a href="#capacity" data-rail="capacity"><span>10 能力边界</span></a>
+  <a href="#scale" data-rail="scale"><span>11 规模进阶</span></a>
+  <a href="#ai" data-rail="ai"><span>12 AI 时代</span></a>
+  <a href="#start" data-rail="start"><span>13 寄语</span></a>
 </aside>
 
 <main id="main">
@@ -79,15 +85,15 @@
     </h1>
 
     <p class="hero__lead reveal" style="--d:2">
-      从一句自然语言，到一个真正上线的网站。<br />
-      从构思、编码到上线，两条部署路径，把「我不会写代码」变成「我已经上线了」。
+      从一句自然语言，到一个真正上线的网站；<br />
+      再从一个小站，走到一套完整的技术栈。
     </p>
 
     <div class="hero__meta reveal" style="--d:3">
       <span class="chip"><b>5</b> 步闭环</span>
       <span class="chip"><b>2</b> 条部署路径</span>
+      <span class="chip"><b>4</b> 条升级线</span>
       <span class="chip"><b>0</b> 行代码起步</span>
-      <span class="chip">GitHub Pages</span>
     </div>
 
     <div class="hero__cta reveal" style="--d:4">
@@ -1012,19 +1018,319 @@
   </div>
 </section>
 
-<!-- ===================== 10 今天开始 ===================== -->
+<!-- ===================== 10 能力边界 ===================== -->
+<section class="section" id="capacity">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">10 / 能力边界</span>
+        <span class="sec-index__label">Current edge</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">已经能上线，<br />但还只是一间「展厅」。</h2>
+        <p class="lead reveal" style="--d:1">
+          现阶段我们掌握的是轻量、快速落地的静态网站：原生 HTML / CSS / JS 配 Tailwind 与 UI 组件库，用自然语言提需求让 AI 生成并迭代，最后托管到 GitHub Pages 自动上线。
+          优势是快，边界也很清楚——它存不住数据，也承载不了业务。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">不是能力不够，<br />是这一层本来就不该承担业务。</div>
+    </div>
+
+    <div class="edge">
+      <div class="edge__col edge__col--have reveal">
+        <div class="edge__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/circle-check.svg')"></span>
+          已经掌握
+          <span class="badge">优势</span>
+        </div>
+        <ul>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/code-2.svg')"></span>原生 HTML / CSS / JS，配 Tailwind 与 UI 组件库</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/message-square.svg')"></span>用中文提需求，AI 生成可运行页面</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/refresh-cw.svg')"></span>多轮口述迭代，随时改样式与结构</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/git-branch.svg')"></span>GitHub Pages 托管，push 即上线</li>
+        </ul>
+        <div class="edge__foot">门槛低、速度快、出成果快，适合快速积累作品、做个人主页与项目展示。</div>
+      </div>
+
+      <div class="edge__col edge__col--lack reveal" style="--d:1">
+        <div class="edge__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/triangle-alert.svg')"></span>
+          明确边界
+          <span class="badge">天花板</span>
+        </div>
+        <ul>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/x.svg')"></span>纯静态：没有数据库，也没有后台服务</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/x.svg')"></span>存不了用户数据：注册、登录、评论都做不到</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/x.svg')"></span>没有权限体系：后台管理与角色区分无从谈起</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/x.svg')"></span>跑不了服务端程序：接口、定时任务都不支持</li>
+        </ul>
+        <div class="edge__foot">结果：只能承载「展示」，承载不了真正的业务功能。</div>
+      </div>
+    </div>
+
+    <div class="statement reveal">
+      <p>静态站是一间<em>展厅</em>，<br />不是一座<em>工厂</em>。</p>
+      <div class="stamp">
+        展厅负责展示，工厂才负责运营<br />
+        —— 下一节：从小站到大站的四条升级线
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 11 规模进阶 ===================== -->
+<section class="section" id="scale">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">11 / 规模进阶</span>
+        <span class="sec-index__label">From site to service</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">从小站到大站，<br />要同时换四条线。</h2>
+        <p class="lead reveal" style="--d:1">
+          要做功能型网站、可运营平台，只换前端框架远远不够，整套技术栈需要同步升级。
+          四条线里，后端与数据库是真正的分水岭——它决定了网站能不能变成「活的」。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">判断标准只有三条：<br />存得住、分得清、跑得稳。</div>
+    </div>
+
+    <div class="tabs tabs--four reveal" role="tablist" aria-label="四条升级线">
+      <button class="tab" role="tab" id="tab-up-fe" aria-controls="panel-up-fe" aria-selected="true">
+        前端 <span class="count">01</span>
+      </button>
+      <button class="tab" role="tab" id="tab-up-be" aria-controls="panel-up-be" aria-selected="false" tabindex="-1">
+        后端与数据库 <span class="count">02</span>
+      </button>
+      <button class="tab" role="tab" id="tab-up-deploy" aria-controls="panel-up-deploy" aria-selected="false" tabindex="-1">
+        部署 <span class="count">03</span>
+      </button>
+      <button class="tab" role="tab" id="tab-up-ability" aria-controls="panel-up-ability" aria-selected="false" tabindex="-1">
+        能力定位 <span class="count">04</span>
+      </button>
+    </div>
+
+    <div class="tabpanel" id="panel-up-fe" role="tabpanel" aria-labelledby="tab-up-fe">
+      <div class="lift reveal">
+        <div class="lift__head">
+          <span>项目</span><span>现在</span><span>升级为</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">框架</span>
+          <span class="lift__mid" data-label="现在">原生 HTML 静态页面</span>
+          <span class="lift__to" data-label="升级为"><b>Vue3 / React</b> 工程化框架；进一步用 <b>Next.js / Nuxt.js</b> 承接全站</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">样式与组件</span>
+          <span class="lift__mid" data-label="现在">Tailwind + DaisyUI，CDN 直接引入</span>
+          <span class="lift__to" data-label="升级为"><b>Element Plus、Ant Design、NaiveUI</b> 等企业级组件库</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">解决的问题</span>
+          <span class="lift__mid" data-label="现在">页面少、结构简单，手写还能维护</span>
+          <span class="lift__to" data-label="升级为">页面成千上万时，组件复用、路由管理、状态管理与工程化维护</span>
+        </div>
+      </div>
+      <p class="lift__note reveal">前端升级的核心不是「换一个更高级的框架」，而是让页面数量增长十倍之后，代码仍然改得动。</p>
+    </div>
+
+    <div class="tabpanel" id="panel-up-be" role="tabpanel" aria-labelledby="tab-up-be" hidden>
+      <div class="lift lift--plain reveal">
+        <div class="lift__head">
+          <span>层次</span><span>可选方案</span><span>承担什么</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">后端框架</span>
+          <span class="lift__mid" data-label="可选方案"><b>Spring Boot</b>（Java）或 <b>NestJS</b>（Node）</span>
+          <span class="lift__desc" data-label="承担什么">提供接口、处理业务逻辑、校验权限</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">数据库</span>
+          <span class="lift__mid" data-label="可选方案"><b>MySQL</b>（关系型，最常见），必要时配 PostgreSQL</span>
+          <span class="lift__desc" data-label="承担什么">持久化用户、内容、订单等业务数据</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">缓存</span>
+          <span class="lift__mid" data-label="可选方案"><b>Redis</b></span>
+          <span class="lift__desc" data-label="承担什么">承接高频读取，降低数据库压力</span>
+        </div>
+      </div>
+      <div class="callout callout--info reveal">
+        <span class="ic" style="--ic:url('../icons/database.svg')"></span>
+        <div>
+          <div class="callout__title">分水岭：加上这一层，才叫「网站」</div>
+          <p>登录注册、内容发布、数据存储、权限区分、文件上传、后台管理才真正成立——这才接近互联网意义上的「网站」，而不只是一张会滚动的页面。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabpanel" id="panel-up-deploy" role="tabpanel" aria-labelledby="tab-up-deploy" hidden>
+      <div class="lift reveal">
+        <div class="lift__head">
+          <span>项目</span><span>现在：GitHub Pages</span><span>升级方向</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">能跑什么</span>
+          <span class="lift__mid" data-label="现在">只能跑静态文件，不能执行后端程序</span>
+          <span class="lift__to" data-label="升级为">云服务器 <b>ECS</b>、<b>Serverless</b> 云函数、<b>Docker</b> 容器化部署</span>
+        </div>
+        <div class="lift__row">
+          <span class="lift__k">适用阶段</span>
+          <span class="lift__mid" data-label="现在">原型、作品展示、文档页</span>
+          <span class="lift__to" data-label="升级为">正式运营、需要接口与定时任务、要扛住并发</span>
+        </div>
+      </div>
+      <p class="lift__note reveal">GitHub Pages 没有过时，它只是负责「展示层」。真正的业务运转，需要一台能 7×24 小时跑程序的机器。</p>
+    </div>
+
+    <div class="tabpanel" id="panel-up-ability" role="tabpanel" aria-labelledby="tab-up-ability" hidden>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <span class="card__tag">01</span>
+          <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/database.svg')"></span></div>
+          <h3>存得住</h3>
+          <p>能不能存住用户提交的数据。评论、订单、文章、上传的文件，都要真正落进数据库。</p>
+          <div class="card__meta"><b>对应</b><span>后端 + 数据库</span></div>
+        </article>
+        <article class="card reveal" style="--d:1">
+          <span class="card__tag">02</span>
+          <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/shield-check.svg')"></span></div>
+          <h3>分得清</h3>
+          <p>能不能区分不同用户的权限。谁能看、谁能改、谁能删，都要在服务端判断，而不是藏在前端。</p>
+          <div class="card__meta"><b>对应</b><span>认证 + 权限体系</span></div>
+        </article>
+        <article class="card reveal" style="--d:2">
+          <span class="card__tag">03</span>
+          <div class="card__icon"><span class="ic ic--lg" style="--ic:url('../icons/server.svg')"></span></div>
+          <h3>跑得稳</h3>
+          <p>能不能在没有人盯着的时候稳定运行。接口、定时任务、并发与异常，都得有人负责。</p>
+          <div class="card__meta"><b>对应</b><span>部署 + 运维</span></div>
+        </article>
+      </div>
+      <p class="lead reveal" style="margin-top:24px">
+        整体上，是从「只能展示写死的页面」，升级为「前后端完整、可交互、可存储、可运营、可商业化」的真实开发能力。
+        这条路上每一步都有明确的判断标准：存得住数据、分得清权限、无人值守也能跑。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 12 AI 时代 ===================== -->
+<section class="section" id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="sec-index reveal">
+        <span class="sec-num">12 / AI 时代</span>
+        <span class="sec-index__label">The judgment</span>
+      </div>
+      <div class="sec-head__main">
+        <h2 class="sec-title reveal">AI 会取代<br />计算机专业吗？</h2>
+        <p class="lead reveal" style="--d:1">
+          这是现在最普遍的疑问：AI 写代码这么强，还值得花几年学编程、学计算机专业吗，会不会毕业就被替代。
+          结论先说：AI 替代的是重复编码劳动，不替代专业判断能力；真正被淘汰的，是只会机械搬代码的人。
+        </p>
+      </div>
+      <div class="sec-head__aside reveal" style="--d:2">工具越强，<br />判断越值钱。</div>
+    </div>
+
+    <div class="split">
+      <div class="split__col split__col--take reveal">
+        <div class="split__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/sparkles.svg')"></span>
+          AI 擅长
+          <span class="badge">重复劳动</span>
+        </div>
+        <ul class="split__list">
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>写基础页面</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>写模板代码</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>写重复逻辑</li>
+          <li><span class="ic ic--sm" style="--ic:url('../icons/check.svg')"></span>改样式、调布局</li>
+        </ul>
+        <div class="split__mini">
+          <span class="k">分工</span>
+          <span>AI 负责施工</span>
+          <span class="sep">→</span>
+          <span class="v">你负责判断</span>
+        </div>
+        <p class="split__note">这些本来属于低价值重复劳动。AI 解放的是人的时间，释放出来的时间应该投入到判断与设计上——而不是岗位本身消失。</p>
+      </div>
+
+      <div class="split__col split__col--cant reveal" style="--d:1">
+        <div class="split__head">
+          <span class="ic ic--sm" style="--ic:url('../icons/triangle-alert.svg')"></span>
+          AI 做不了
+          <span class="badge">专业判断</span>
+        </div>
+        <ol class="split__list split__list--num">
+          <li><b>不会主动设计架构</b><span>它按你给的方案写代码，不负责判断这个方案能不能撑住三年后的业务量。</span></li>
+          <li><b>不会替你把关正确性与安全</b><span>生成的代码常带隐藏缺陷、兼容问题与安全隐患，需要专业知识去审查、复现、重构。</span></li>
+          <li><b>不会梳理复杂业务逻辑</b><span>真实项目的规则互相牵连，拆解与统筹只能由人拍板。</span></li>
+          <li><b>没有产品思维与落地判断</b><span>工具没有想法，想法只能来自人。</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="verdict reveal">
+      <div class="verdict__row verdict__row--out">
+        <span class="verdict__k"><span class="ic ic--sm" style="--ic:url('../icons/user-x.svg')"></span>会被淘汰</span>
+        <p>只会机械敲代码、只做搬砖、没有专业判断力的人。</p>
+      </div>
+      <div class="verdict__row verdict__row--in">
+        <span class="verdict__k"><span class="ic ic--sm" style="--ic:url('../icons/user-check.svg')"></span>不会被淘汰</span>
+        <p>懂原理、能排错、能设计架构、会用 AI 提效、能把项目真正落地的人。</p>
+      </div>
+    </div>
+
+    <div class="curve reveal">
+      <div class="curve__head">
+        <span>阶段一 · 入门</span>
+        <span>阶段二 · 上限</span>
+      </div>
+      <div class="curve__rail" aria-hidden="true"><i></i><i></i></div>
+      <div class="curve__cols">
+        <div class="curve__col">
+          <h3>VibeCoding</h3>
+          <p>快速出作品、看懂开发逻辑、学会用 AI 放大自己。它解决的是「能不能开始」。</p>
+        </div>
+        <div class="curve__col">
+          <h3>专业学习</h3>
+          <p>掌控 AI、修正 AI，去做 AI 独立完成不了的复杂项目。它决定的是「能走多远」。</p>
+        </div>
+      </div>
+      <p class="curve__note">两者不对立，是同一成长曲线上的两个阶段：先用 AI 跑起来，再用专业能力决定上限。</p>
+    </div>
+
+    <div class="statement statement--quote reveal">
+      <p>AI 是工具，不是对手。<br />未来不是 AI 取代程序员，<br />而是<em>会用 AI 的程序员</em><br />取代不会用 AI 的程序员。</p>
+      <div class="stamp">
+        《网站规模进阶与 AI 时代认知升华》<br />
+        —— 分享会结语
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== 13 寄语 ===================== -->
 <section class="section section--night closing" id="start">
   <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap">
     <div class="sec-head">
       <div class="sec-index reveal">
-        <span class="sec-num" style="color:#9fb0ff">10 / 今天开始</span>
-        <span class="sec-index__label" style="color:rgba(255,255,255,.5)">Start now</span>
+        <span class="sec-num" style="color:#9fb0ff">13 / 寄语</span>
+        <span class="sec-index__label" style="color:rgba(255,255,255,.5)">Keep exploring</span>
       </div>
       <div class="sec-head__main">
-        <h2 class="reveal">焦虑来自「还没开始」，<br />而<em>第一次上线</em>，<br class="br-wide" />只需要一个下午。</h2>
+        <h2 class="reveal">技术的迭代不会停下来，<br />但<em>第一步</em>，今天就能走。</h2>
+        <p class="lead reveal" style="--d:1;color:rgba(242,240,234,.62)">
+          不必先被想象中的变革吓退——变革里往往藏着更多机会。<br class="br-desk" />
+          保持对新事物的好奇，敢试新工具、新思路，主动跟上时代的节奏。<br class="br-desk" />
+          从快速搭出一个小网站开始，一步一步把基础夯实：<br class="br-desk" />既用 AI 放大自己的创意，也持续打磨真正硬核的专业能力。
+        </p>
       </div>
     </div>
+
+    <div class="closing__label reveal">今天就能做完的三件事</div>
 
     <div class="todo">
       <article class="todo__item reveal">
@@ -1046,12 +1352,12 @@
 
     <div class="closing__foot">
       <div class="closing__sign reveal">
-        谢谢，去把第一个链接跑出来。
+        保持热爱，持续探索，最终主导技术的还是我们自己。
         <span>拥抱 AI，拒绝焦虑 · VibeCoding 技术成长分享交流会</span>
       </div>
       <div style="display:flex;gap:10px;flex-wrap:wrap" class="reveal">
         <a class="btn btn--night" href="#top">回到开头 <span class="ic ic--sm" style="--ic:url('../icons/arrow-up-right.svg')"></span></a>
-        <a class="btn btn--night-ghost" href="#manual">重看部署路径</a>
+        <a class="btn btn--night-ghost" href="#scale">重看进阶路线</a>
       </div>
     </div>
   </div>
@@ -1061,7 +1367,7 @@
 
 <footer class="footer">
   <div class="wrap footer__inner">
-    <div>内容整理自《VibeCoding 建站实操指南：工具、技术栈与 GitHub Pages 部署》</div>
+    <div>内容整理自《VibeCoding 建站实操指南：工具、技术栈与 GitHub Pages 部署》<br />与《网站规模进阶与 AI 时代认知升华》（部分内容由豆包工作 AI 生成）</div>
     <div class="footer__links">
       <a href="https://docs.github.com/en/pages" target="_blank" rel="noopener">GitHub Pages 文档</a>
       <a href="https://github.com/17762396674-star/vibecoding-share" target="_blank" rel="noopener">本站仓库</a>
