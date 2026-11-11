@@ -3393,6 +3393,25 @@ code.inline {
   color: var(--muted);
 }
 
+/* 大屏：13 个锚点 + 校名 logo 一起塞不进 1200 容器，收紧间距并隐去副标题，
+   否则右侧 GitHub 按钮会被挤出屏幕 */
+@media (min-width: 1241px) {
+  .brand__sub {
+    display: none;
+  }
+  .nav__inner {
+    gap: 16px;
+  }
+  .nav__link {
+    padding: 8px 9px;
+    font-size: 0.82rem;
+  }
+  .nav__link.is-active::after {
+    left: 9px;
+    right: 9px;
+  }
+}
+
 @media (max-width: 1240px) {
   .brand__sub {
     display: none;
@@ -3410,7 +3429,7 @@ code.inline {
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 1100px) {
+@media (max-width: 1239px) {
   .nav__link {
     font-size: 0.875rem;
   }
@@ -3462,7 +3481,11 @@ code.inline {
     display: none;
   }
   .nav__gh {
-    padding: 7px 9px;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 10px;
   }
   .brand__sub {
     display: none;
