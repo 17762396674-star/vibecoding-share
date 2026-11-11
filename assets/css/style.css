@@ -38,10 +38,10 @@
   --paper: #f6f3ec;
   --paper-2: #fffefb;
   --ink: #12110f;
-  --ink-2: #45423b;
-  --muted: #7c766a;
+  --ink-2: #3d3a33;
+  --muted: #645e52;
   --line: #e3ded1;
-  --line-2: #cfc9b9;
+  --line-2: #c8c1b0;
   --accent: #1a34d8;
   --accent-2: #4a5cff;
   --accent-soft: #e9ecff;
@@ -311,11 +311,13 @@ p {
   background: #fff;
 }
 .btn--night-ghost {
-  border-color: rgba(255, 255, 255, 0.24);
+  border-color: rgba(255, 255, 255, 0.3);
   color: #f2f0ea;
+  background: rgba(255, 255, 255, 0.04);
 }
 .btn--night-ghost:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.1);
 }
 .btn--sm {
   padding: 9px 16px;
@@ -458,7 +460,7 @@ p {
   background-color: #f6f4ef;
 }
 .nav.is-dark .brand__sub {
-  color: rgba(255, 255, 255, 0.42);
+  color: rgba(255, 255, 255, 0.6);
   border-left-color: rgba(255, 255, 255, 0.18);
 }
 .nav.is-dark .nav__link {
@@ -599,7 +601,7 @@ p {
   max-width: 660px;
   font-size: clamp(0.98rem, 1.25vw, 1.14rem);
   line-height: 1.85;
-  color: rgba(244, 242, 236, 0.7);
+  color: rgba(244, 242, 236, 0.82);
 }
 .hero__meta {
   margin-top: 26px;
@@ -649,7 +651,7 @@ p {
   font-family: var(--font-mono);
   font-size: 0.66rem;
   letter-spacing: 0.14em;
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.65);
 }
 .hero__scroll {
   margin-top: 0;
@@ -660,7 +662,7 @@ p {
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.55);
 }
 .hero__scroll span {
   display: block;
@@ -814,7 +816,7 @@ p {
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.74rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.62);
   padding-top: 4px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1030,7 +1032,7 @@ p {
   margin-left: auto;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.6);
   text-align: right;
   line-height: 1.8;
 }
@@ -1516,7 +1518,7 @@ p {
   border-color: transparent;
 }
 .reco__logos .plus {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.5);
   font-size: 1.2rem;
 }
 .reco h3 {
@@ -1562,7 +1564,7 @@ p {
   margin-bottom: 2px;
 }
 .reco__list span {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.62);
   font-size: 0.8rem;
 }
 
@@ -1865,7 +1867,7 @@ code.inline {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.04em;
 }
 .codeblock__bar .dots {
