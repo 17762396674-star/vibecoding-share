@@ -368,18 +368,14 @@ p {
   letter-spacing: -0.02em;
   font-size: 0.98rem;
 }
-.brand__mark {
-  width: 30px;
-  height: 30px;
-  border-radius: 9px;
-  background: var(--ink);
-  color: #fff;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: -0.02em;
+.brand__logo {
+  width: 133px;
+  height: 26px;
   flex: none;
+  background-color: var(--ink);
+  -webkit-mask: url("../logos/jxfi-white.png") no-repeat left center / contain;
+  mask: url("../logos/jxfi-white.png") no-repeat left center / contain;
+  transition: background-color 0.25s ease;
 }
 .brand__sub {
   font-weight: 400;
@@ -458,9 +454,8 @@ p {
 .nav.is-dark .brand {
   color: #f6f4ef;
 }
-.nav.is-dark .brand__mark {
-  background: rgba(255, 255, 255, 0.13);
-  color: #fff;
+.nav.is-dark .brand__logo {
+  background-color: #f6f4ef;
 }
 .nav.is-dark .brand__sub {
   color: rgba(255, 255, 255, 0.42);
@@ -3738,6 +3733,10 @@ code.inline {
 }
 
 @media (max-width: 620px) {
+  .brand__logo {
+    width: 108px;
+    height: 21px;
+  }
   .pain {
     grid-template-columns: 1fr;
   }
