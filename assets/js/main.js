@@ -16,14 +16,21 @@
   var railLinks = $$('.rail a');
 
   var darkSections = $$('.hero, .section--night');
-  function updateNavTone() {
-    if (!nav) return;
-    var probe = 34, dark = false;
+  var railEl = $('.rail');
+
+  function isDarkAt(y) {
+    var dark = false;
     darkSections.forEach(function (sec) {
       var r = sec.getBoundingClientRect();
-      if (r.top <= probe && r.bottom > probe) dark = true;
+      if (r.top <= y && r.bottom > y) dark = true;
     });
-    nav.classList.toggle('is-dark', dark);
+    return dark;
+  }
+
+  function updateNavTone() {
+    if (nav) nav.classList.toggle('is-dark', isDarkAt(34));
+    /* 右侧圆点在深色章节里会看不见，单独按视口中线判断 */
+    if (railEl) railEl.classList.toggle('is-dark', isDarkAt(window.innerHeight / 2));
   }
 
   function onScroll() {

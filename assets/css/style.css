@@ -2452,26 +2452,53 @@ code.inline {
   z-index: 60;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
 }
 .rail a {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: rgba(18, 17, 15, 0.18);
   transition: background 0.25s, transform 0.25s;
   position: relative;
 }
+/* 圆点看着只有 10px，命中区扩到 26×26：
+   相邻圆点中心相距 28px，命中区之间留 2px 空隙，
+   点偏一点也还是点在自己那一节上 */
+.rail a::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+}
 .rail a:hover {
   transform: scale(1.4);
+}
+.rail a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
 }
 .rail a.is-active {
   background: var(--accent);
   transform: scale(1.35);
 }
+/* 深色章节里圆点反白，否则看不见 */
+.rail.is-dark a {
+  background: rgba(255, 255, 255, 0.28);
+}
+.rail.is-dark a:hover {
+  background: rgba(255, 255, 255, 0.55);
+}
+.rail.is-dark a.is-active {
+  background: #9fb0ff;
+}
+.rail.is-dark a span {
+  background: #f2f0ea;
+  color: #131210;
+}
 .rail a span {
   position: absolute;
-  right: 18px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%) translateX(6px);
   font-size: 0.7rem;
@@ -2484,7 +2511,8 @@ code.inline {
   pointer-events: none;
   transition: opacity 0.2s, transform 0.2s;
 }
-.rail a:hover span {
+.rail a:hover span,
+.rail a:focus-visible span {
   opacity: 1;
   transform: translateY(-50%) translateX(0);
 }
